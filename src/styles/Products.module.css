@@ -1,0 +1,12 @@
+.products {
+    height: auto;
+    min-height: 100vh;
+    width: 100vw;
+    background-color: var(--prussian-blue);
+    color: var(--lemon-meringue);
+    font-family: 'Overpass', sans-serif;
+    font-weight: normal;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
