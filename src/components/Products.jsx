@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react';
 import styles from "../styles/Products.module.css"
 import ProductPreview from "./ProductPreview";
 
-const Products = () => {
+const Products = ({ cartHandler }) => {
 
     useEffect(() => {
         getUrls() // Make async call to get photos and brief desc.
@@ -32,7 +32,8 @@ const Products = () => {
         return {
             name: data["AVAIL:Title"],
             pDesc: data["AVAIL:Description"],
-            src: image.small
+            src: image.small,
+            price: makePrice()
         }
     }
 
@@ -69,11 +70,9 @@ const Products = () => {
 
     const makePrice = () => {
         let nums = []
-        for (let j = 0; j < 10; j++) {
             for (let i = 0; i < 3; i++) {
                 nums.push(Math.floor((Math.random() * 6) + 1))
             }
-        }
         return nums.join("")
     }
 
@@ -85,7 +84,8 @@ const Products = () => {
             { products.map((product) => {
                 return <ProductPreview  source={product.src}
                                         title={product.name}
-                                        price={makePrice()}
+                                        price={product.price + ".99"}
+                                        cartHandler={cartHandler}
                 />
             })}
             </div>

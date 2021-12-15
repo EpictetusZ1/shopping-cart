@@ -4,16 +4,19 @@ import Welcome from "./components/Welcome";
 import Products from "./components/Products";
 import Header from "./components/Header";
 import Cart from "./components/Cart";
+import {useState} from "react";
 
 const RouteSwitch = () => {
+    const [cartItems, setCartItems] = useState([])
+
    return (
        <BrowserRouter>
-       <Header />
+           <Header />
            <Routes>
                <Route path="/" element={<App />} />
                <Route path="/welcome" element={<Welcome />} />
-               <Route path="/shop" element={<Products />} />
-               <Route path="/shop/cart" element={<Cart />} />
+               <Route path="/shop" element={<Products cartHandler={setCartItems} />} />
+               <Route path="/cart" element={<Cart items={cartItems} />} />
            </Routes>
        </BrowserRouter>
    )
