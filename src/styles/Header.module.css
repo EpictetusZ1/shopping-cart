@@ -5,21 +5,37 @@
     padding: 2em;
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-between;
     color: var(--maximum-yellow-red);
     position: sticky;
     line-height: 4.5em;
     background-color: #444444;
     box-shadow: rgba(0, 0, 0, 0.15) 0 3px 3px 0;
+    overflow: hidden;
 }
 
 .logo {
-    width: 40%;
+    width: 30%;
     height: 100%;
     letter-spacing: 2px;
     font-family: 'Rubik', sans-serif;
     font-weight: bold;
-    font-size: 4.5em;
+    font-size: 5em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logoName {
+    color: var(--orange);
+    position: absolute;
+    z-index: 1;
+    text-shadow: 4px 4px 15px rgba(6, 13, 21, 0.73);
+}
+
+.rocket {
+    margin: 0;
+    font-size: 1.8em;
 }
 
 .navLinks {
@@ -28,11 +44,13 @@
     padding: 0 2em;
     font-size: 2em;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: flex-start;
     align-items: center;
+    font-family: 'Overpass', sans-serif;
 }
 
 .navLinks a {
     color: inherit;
     text-decoration: none;
+    padding-right: 2em;
 }

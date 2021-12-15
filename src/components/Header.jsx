@@ -6,8 +6,10 @@ const Header = () => {
     return (
        <nav className={styles.navBar}>
            <div className={styles.logo}>
-               LiftOff
+               <div className={styles.logoName}>Lift Off</div>
+               <div className={styles.rocket}> 🚀</div>
            </div>
+
            <ul className={styles.navLinks}>
                <Link to={"/"}>
                    <li>Home</li>
@@ -16,7 +18,6 @@ const Header = () => {
                    <li>Shop</li>
                </Link>
            </ul>
-
        </nav>
     );
 }
