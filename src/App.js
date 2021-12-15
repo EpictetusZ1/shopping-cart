@@ -3,9 +3,11 @@ import styles from "./styles/App.module.css"
 import Welcome from "./components/Welcome";
 
 const App = () => {
+
   return (
     <div className={styles.app}>
-      <Welcome />
+        <Welcome />
+
     </div>
   );
 }

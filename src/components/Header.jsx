@@ -12,10 +12,13 @@ const Header = () => {
 
            <ul className={styles.navLinks}>
                <Link to={"/"}>
-                   <li>Home</li>
+                   <button>Home</button>
                </Link>
                <Link to={"/shop"}>
-                   <li>Shop</li>
+                   <button>Shop</button>
+               </Link>
+               <Link to={"/shop/cart"}>
+                   <button>Cart</button>
                </Link>
            </ul>
        </nav>
