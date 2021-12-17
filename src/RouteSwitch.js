@@ -8,6 +8,8 @@ import {useState} from "react";
 
 const RouteSwitch = () => {
     const [cartItems, setCartItems] = useState([])
+    const [productList, setProductList] = useState([])
+    const [apiCalled, setApiCalled] = useState(false)
 
    return (
        <BrowserRouter>
@@ -15,8 +17,11 @@ const RouteSwitch = () => {
            <Routes>
                <Route path="/" element={<App />} />
                <Route path="/welcome" element={<Welcome />} />
-               <Route path="/shop" element={<Products cartHandler={setCartItems} />} />
-               <Route path="/cart" element={<Cart items={cartItems} />} />
+               <Route path="/shop" element={<Products cartHandler={setCartItems}
+                                                      products={[productList, setProductList]}
+                                                      api={[apiCalled, setApiCalled]}
+               />} />
+               <Route path="/shop/cart" element={<Cart items={cartItems} />} />
            </Routes>
        </BrowserRouter>
    )

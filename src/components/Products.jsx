@@ -1,14 +1,18 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect } from 'react';
 import styles from "../styles/Products.module.css"
 import ProductPreview from "./ProductPreview";
 
-const Products = ({ cartHandler }) => {
+const Products = ({ cartHandler, products, api }) => {
+    const [productList, setProductList] = products
+    const [apiCalled, setApiCalled] = api
 
     useEffect(() => {
-        getUrls() // Make async call to get photos and brief desc.
+        if (!apiCalled) {
+            getUrls() // Handle ALL API call
+            setApiCalled(true)
+        }
     }, [])
 
-    const [products, setProducts] = useState([])
 
     const assetUrls = [
         "PIA18033",
@@ -29,20 +33,24 @@ const Products = ({ cartHandler }) => {
             {mode: "cors"}
         )
         const data = await response.json()
+
         return {
             name: data["AVAIL:Title"],
             pDesc: data["AVAIL:Description"],
             src: image.small,
-            price: makePrice()
+            price: makePrice() + ".99",
+            key: data["AVAIL:NASAID"]
         }
     }
 
     const fetchImagePath = async (nasaId) => {
         const pattern = /~small/
+
         const response = await fetch(
             `https://images-api.nasa.gov/asset/${nasaId}`,
             {mode: "cors"}
         )
+
         const data = await response.json()
         let small = data["collection"]["items"]
 
@@ -59,7 +67,8 @@ const Products = ({ cartHandler }) => {
     const getUrls = () => {
         assetUrls.forEach( (url) => {
             try {
-                fetchImagePath(url).then(r => fetchMeta(r).then( response => setProducts(
+                // All API calls handled here
+                fetchImagePath(url).then(r => fetchMeta(r).then( response => setProductList(
                     prevState => [...prevState, response] )
                 ))
             } catch (error) {
@@ -81,11 +90,10 @@ const Products = ({ cartHandler }) => {
             <h2 className={styles.productIntro}>Shop our <i>out of this world</i> prints !</h2>
 
             <div className={styles.products}>
-            { products.map((product) => {
-                return <ProductPreview  source={product.src}
-                                        title={product.name}
-                                        price={product.price + ".99"}
+            { productList.map((product) => {
+                return <ProductPreview  data={product}
                                         cartHandler={cartHandler}
+                                        key={product.key}
                 />
             })}
             </div>

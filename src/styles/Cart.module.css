@@ -13,7 +13,7 @@
     text-align: left;
     font-size: 3em;
     letter-spacing: 3px;
-    color: var(--orange);
+    color: var(--plump-purple);
 }
 
 .cart {
@@ -49,7 +49,7 @@ td, tr {
     font-weight: normal;
     font-size: 1.8em;
     line-height: 1.2em;
-    color: var(--maximum-yellow-red);
+    color: var(--saffron);
     text-align: left;
 }
 
@@ -70,11 +70,12 @@ td, tr {
 .checkout {
     font-family: 'Roboto Condensed', sans-serif;
     letter-spacing: 2px;
-    background-image: linear-gradient(92.88deg, #f47f6b 9.16%, #f4c96b 43.89%, #d7b93f 64.72%);
+    background: rgb(122,81,151);
+    background: linear-gradient(90deg, rgba(122,81,151,1) 0%, rgba(244,127,107,1) 69%);
     border-radius: 8px;
     border-style: none;
     box-sizing: border-box;
-    color: #FF4742;
+    color: var(--lemon-meringue);
     cursor: pointer;
     flex-shrink: 0;
     font-size: 2em;
@@ -82,7 +83,7 @@ td, tr {
     height: 4rem;
     padding: 0 1.6rem;
     text-align: center;
-    text-shadow: rgba(0, 0, 0, 0.25) 0 3px 8px;
+    text-shadow: rgba(63, 63, 63, 0.25) 0 3px 8px;
     transition: all .5s;
     user-select: none;
     -webkit-user-select: none;

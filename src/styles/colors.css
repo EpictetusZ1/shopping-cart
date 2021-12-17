@@ -1,7 +1,11 @@
 :root {
+    --saffron: #f5c63cff;
+    --salmon: #f47f6bff;
+    --mulberry-crayola: #bb5098ff;
+    --royal-purple: #7a5197ff;
+    --plump-purple: #5344a9ff;
     --prussian-blue: #003049ff;
-    --maximum-red: #5344a9ff;
-    --orange: #f47f6bff;
-    --maximum-yellow-red: #f5c63cff;
+    --maximum-red: #d62828ff;
     --lemon-meringue: #eae2b7ff;
+    --russian-violet: #1d1135;
 }

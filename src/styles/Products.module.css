@@ -13,7 +13,7 @@
     width: 90%;
     font-size: 3em;
     word-spacing: 8px;
-    color: var(--maximum-red);
+    color: var(--plump-purple);
     font-family: 'Roboto Condensed', sans-serif;
     font-weight: lighter;
     margin: 1em 0 0 1em;
@@ -37,7 +37,8 @@
     height: 425px;
     width: 250px;
     padding: 0 0 10px 0;
-    background-color: #1d1135;
+    border: 2px solid rgba(98, 95, 95, 0.37);
+    background-color: var(--russian-violet);
     box-shadow: rgba(0, 0, 0, 0.25) 0 14px 28px, rgba(0, 0, 0, 0.22) 0 10px 10px;
     border-radius: 0 0 1.3em 1.3em;
     align-self: center;
@@ -63,7 +64,6 @@
 .productCard:hover {
     transform: scale(1.1);
     cursor: pointer;
-    color: var(--orange);
 }
 
 .image {
@@ -84,7 +84,7 @@
     height: auto;
     width: 100%;
     margin: 0;
-    color: #7A51A7FF;
+    color: var(--royal-purple);
     text-align: center;
     font-size: 1em;
 }
@@ -94,7 +94,7 @@
     border-radius: 8px;
     border-style: none;
     box-sizing: border-box;
-    color: #FFFFFF;
+    color: var(--lemon-meringue);
     cursor: pointer;
     display: inline-block;
     font-family: "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -119,5 +119,6 @@
 
 .button:hover,
 .button:focus {
+    color: var(--prussian-blue);
     background-color: #f59180;
 }
