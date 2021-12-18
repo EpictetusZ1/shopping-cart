@@ -8,7 +8,7 @@ const Products = ({ cartHandler, products, api }) => {
 
     useEffect(() => {
         if (!apiCalled) {
-            getUrls() // Invoke handle ALL API call
+            getUrls() // Invoke API call ONCE when component first mounts
             setApiCalled(true)
         }
     }, [])
@@ -26,6 +26,7 @@ const Products = ({ cartHandler, products, api }) => {
         "PIA17563"
     ]
 
+    // Fetch Image manifest and target image URL (~small)
     const fetchMeta = async (image) => {
         const response = await fetch(
             `${image.meta}`,
@@ -43,20 +44,21 @@ const Products = ({ cartHandler, products, api }) => {
         }
     }
 
+    // Make actual call to get small image
     const fetchImagePath = async (nasaId) => {
         const pattern = /~small/
-
         const response = await fetch(
             `https://images-api.nasa.gov/asset/${nasaId}`,
             {mode: "cors"}
         )
 
         const data = await response.json()
-        let small = data["collection"]["items"]
 
+        let small = data["collection"]["items"]
         small.forEach( (item) => {
             if (pattern.test(item.href)) small = item.href
         })
+
         const meta = data["collection"]["items"].at(-1).href
         return {
             meta,
@@ -73,33 +75,34 @@ const Products = ({ cartHandler, products, api }) => {
                             .then( response => setProductList(
                                 prevState => [...prevState, response] )
                             )
-                    }, reason => console.log(reason.message))
+                    }, reason => window.alert(reason.message))
             } catch (Error) {
-                console.log(Error.message)
+                window.alert(Error.message)
             }
         })
     }
 
+    // Generate a random price for each object
     const makePrice = () => {
         let nums = []
-            for (let i = 0; i < 3; i++) {
-                nums.push(Math.floor((Math.random() * 6) + 1))
-            }
+        for (let i = 0; i < 3; i++) {
+            nums.push(Math.floor((Math.random() * 6) + 1))
+        }
         return nums.join("")
     }
 
     return (
         <div className={styles.productContainer}>
-            <h2 className={styles.productIntro}>Shop our <i>out of this world</i> prints !</h2>
+            <h2 className={styles.productIntro}>Shop our <i>out of this world</i> prints!</h2>
 
             <div className={styles.products}>
-            { productList.map((product) => {
-                return <ProductPreview  data={product}
-                                        setter={setProductList}
-                                        cartHandler={cartHandler}
-                                        key={product.key}
-                />
-            })}
+                { productList.map((product) => {
+                    return <ProductPreview  data={product}
+                                            setter={setProductList}
+                                            cartHandler={cartHandler}
+                                            key={product.key}
+                    />
+                })}
             </div>
         </div>
     );

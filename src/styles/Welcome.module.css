@@ -24,7 +24,6 @@
     margin-top: 20px;
     width: 70%;
     line-height: 1.4em;
-    /*text-shadow: .1em .1em 0 var(--mulberry-crayola);*/
     text-shadow: -1px -1px 0 var(--mulberry-crayola),
     3px 3px 0 #da209d,
     6px 6px 0 #460a32
@@ -86,8 +85,3 @@ a {
     height: 100%;
     width: 95%;
 }
-
-
-
-
-

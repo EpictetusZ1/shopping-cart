@@ -12,13 +12,13 @@ const Cart = ({ items }) => {
         })
 
         return  [
-            ( sum * tax).toFixed(2),
-            ((sum * tax) - sum).toFixed(2)
+            sum, // Subtotal
+            ( sum * tax).toFixed(2), // Gross Total
+            ((sum * tax) - sum).toFixed(2) // Amount charged for taxes
         ]
     }
 
-    const [total, tax] = getTotal(items)
-
+    const [subT, total, tax] = getTotal(items)
 
     return (
         <div className={styles.cartContainer}>
@@ -45,6 +45,8 @@ const Cart = ({ items }) => {
                 </tbody>
             </table>
             <hr/>
+            <div className={styles.taxAmt}>Subtotal: ${subT} </div>
+            <br/>
             <div className={styles.taxAmt}>Taxes: ${tax}</div>
             <h5 className={styles.total}>Your Total: ${total}</h5>
             <button className={styles.checkout}>Checkout Now</button>

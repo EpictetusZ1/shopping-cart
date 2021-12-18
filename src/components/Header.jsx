@@ -12,30 +12,30 @@ const Header = ({cartCounter}) => {
     }
 
     return (
-       <nav className={styles.navBar}>
-           <div className={styles.logo}>
-               <div className={styles.logoName}>Lift Off</div>
-               <div className={styles.rocket}> 🚀</div>
-           </div>
+        <nav className={styles.navBar}>
+            <div className={styles.logo}>
+                <div className={styles.logoName}>Lift Off</div>
+                <div className={styles.rocket}> 🚀</div>
+            </div>
 
-           <ul className={styles.navLinks}>
-               <Link to={"/"}>
-                   <button className={styles.navButton}>Home</button>
-               </Link>
-               <Link to={"/shop"}>
-                   <button className={styles.navButton}>Shop</button>
-               </Link>
+            <ul className={styles.navLinks}>
+                <Link to={"/"}>
+                    <button className={styles.navButton}>Home</button>
+                </Link>
+                <Link to={"/shop"}>
+                    <button className={styles.navButton}>Shop</button>
+                </Link>
 
-               <div className={styles.counterContainer}>
-                   <Link to={"/shop/cart"}>
-                       <div className={styles.count}>
-                           {displayCount()}
-                       </div>
-                       <button className={styles.navButton}>Cart</button>
-                   </Link>
-               </div>
-           </ul>
-       </nav>
+                <div className={styles.counterContainer}>
+                    <Link to={"/shop/cart"}>
+                        <div className={styles.count}>
+                            {displayCount()}
+                        </div>
+                        <button className={styles.navButton}>Cart</button>
+                    </Link>
+                </div>
+            </ul>
+        </nav>
     );
 }
 

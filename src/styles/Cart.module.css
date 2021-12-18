@@ -68,6 +68,8 @@ table {
 .quantity {
     color: #FF4742;
     font-family: 'Overpass', sans-serif;
+    font-size: 1.2em;
+    padding: 0 5px;
 }
 
 hr {

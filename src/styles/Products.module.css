@@ -41,7 +41,6 @@
     background-color: var(--russian-violet);
     box-shadow: rgba(0, 0, 0, 0.25) 0 14px 28px, rgba(0, 0, 0, 0.22) 0 10px 10px;
     border-radius: 0 0 1.3em 1.3em;
-    align-self: center;
     justify-self: center;
     display: flex;
     flex-direction: column;
@@ -99,7 +98,7 @@
     align-items: center;
 }
 
-.adjQuant {
+.adjQuantity {
     height: 1.2em;
     width: 1.2em;
     margin: 0;
@@ -113,25 +112,23 @@
     text-align: center;
 }
 
-.adjQuant:hover {
+.adjQuantity:hover {
     cursor: pointer;
 }
 
 .button {
-    background-color: #F47F6B;
+    background-color: var(--salmon);
     border-radius: 8px;
     border-style: none;
     box-sizing: border-box;
     color: var(--lemon-meringue);
     cursor: pointer;
     display: inline-block;
-    font-family: "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size: 14px;
     font-weight: 500;
     height: 40px;
     width: 150px;
     line-height: 20px;
-    list-style: none;
     margin: 0;
     outline: none;
     padding: 10px 16px;
@@ -140,9 +137,6 @@
     text-decoration: none;
     transition: color 100ms;
     vertical-align: baseline;
-    user-select: none;
-    -webkit-user-select: none;
-    touch-action: manipulation;
 }
 
 .button:hover,

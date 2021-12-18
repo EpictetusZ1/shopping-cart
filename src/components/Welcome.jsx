@@ -6,7 +6,7 @@ const Welcome = () => {
     return (
         <div className={styles.welcomePage}>
             <div className={styles.welcomePageMain}>
-                <h2 className={styles.heroHeader}>Prints of high quality photos straight from NASA</h2>
+                <h2 className={styles.heroHeader}>High Quality prints of the unexplored... straight outta NASA</h2>
                 <div className={styles.buttonContainer}>
                     <Link to={"/shop"}>
                         <button className={styles.heroCTA}>Shop Now</button>
