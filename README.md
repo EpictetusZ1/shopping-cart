@@ -12,10 +12,9 @@
     - ```Routes```
 
 ### Things I learned:
-- Handling API calls in Functional Components with the ```componentDidMount```  equivalent ```useEffect( () => {... DoSomething} ,{})```
+- Handling API calls in Functional Components with the ```componentDidMount```  equivalent ```useEffect( () => {... DoSomething} ,[])```
 - The importance of preforming API calls **only once** and then setting the component state with the returned value
 - The ***intricacies*** of updating Objects inside of Arrays with the ```useState( (prevState) => ...prevState)```  syntax
-
 
 ### Functionality:
 - Fetch the Manifest with an initial API call
