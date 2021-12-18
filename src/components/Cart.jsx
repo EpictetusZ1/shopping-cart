@@ -8,7 +8,7 @@ const Cart = ({ items }) => {
         let tax = 1.13
 
         items.forEach((item) => {
-            sum = sum + parseFloat(item.data.price)
+            sum = sum + (parseFloat(item.data.price) * item.count)
         })
 
         return  [
