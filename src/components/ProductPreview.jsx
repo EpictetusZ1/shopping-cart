@@ -17,22 +17,18 @@ const ProductPreview = ({data, cartHandler}) => {
                         Quantity:
                         <button className={styles.adjQuant}
                                 onClick={() => setCount(prevState => prevState - 1)}
-                        >
-                            -
-                        </button>
+                        >-</button>
                         {count}
                         <button className={styles.adjQuant}
                                 onClick={() => setCount(prevState => prevState + 1)}
-                        >
-                            +
-                        </button>
+                        >+</button>
                     </div>
+
                     <button className={styles.button}
                             onClick={ () => cartHandler(prevState => (
                                 [...prevState, {data, count: count}]
                             ))}
-                    >
-                        Add To Cart</button>
+                    >Add To Cart</button>
                 </div>
             </div>
     );

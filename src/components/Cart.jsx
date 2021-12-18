@@ -13,7 +13,7 @@ const Cart = ({ items }) => {
 
         return  [
             ( sum * tax).toFixed(2),
-            (sum * tax).toFixed(2) - sum
+            ((sum * tax) - sum).toFixed(2)
         ]
     }
 

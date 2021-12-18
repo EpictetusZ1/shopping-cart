@@ -100,14 +100,14 @@
 }
 
 .adjQuant {
-    height: 1em;
-    width: 1em;
+    height: 1.2em;
+    width: 1.2em;
+    margin: 0;
     padding: 0;
-    margin: auto;
-    line-height: 1em;
+    line-height: 1.1em;
     border: none;
     border-radius: 50%;
-    font-size: 1.2em;
+    font-size: 1em;
     font-weight: bold;
     color: var(--maximum-red);
     text-align: center;

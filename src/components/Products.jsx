@@ -37,6 +37,8 @@ const Products = ({ cartHandler, products, api }) => {
             pDesc: data["AVAIL:Description"],
             src: image.small,
             price: makePrice() + ".99",
+            desc: data["AVAIL:Description"],
+            dateCreated: data["AVAIL:DateCreated"],
             key: data["AVAIL:NASAID"]
         }
     }
