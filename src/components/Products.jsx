@@ -8,11 +8,10 @@ const Products = ({ cartHandler, products, api }) => {
 
     useEffect(() => {
         if (!apiCalled) {
-            getUrls() // Handle ALL API call
+            getUrls() // Invoke handle ALL API call
             setApiCalled(true)
         }
     }, [])
-
 
     const assetUrls = [
         "PIA18033",
@@ -33,7 +32,6 @@ const Products = ({ cartHandler, products, api }) => {
             {mode: "cors"}
         )
         const data = await response.json()
-
         return {
             name: data["AVAIL:Title"],
             pDesc: data["AVAIL:Description"],
@@ -67,12 +65,15 @@ const Products = ({ cartHandler, products, api }) => {
     const getUrls = () => {
         assetUrls.forEach( (url) => {
             try {
-                // All API calls handled here
-                fetchImagePath(url).then(r => fetchMeta(r).then( response => setProductList(
-                    prevState => [...prevState, response] )
-                ))
-            } catch (error) {
-                console.log(error)
+                fetchImagePath(url)
+                    .then(r => {
+                        fetchMeta(r)
+                            .then( response => setProductList(
+                                prevState => [...prevState, response] )
+                            )
+                    }, reason => console.log(reason.message))
+            } catch (Error) {
+                console.log(Error.message)
             }
         })
     }
@@ -92,6 +93,7 @@ const Products = ({ cartHandler, products, api }) => {
             <div className={styles.products}>
             { productList.map((product) => {
                 return <ProductPreview  data={product}
+                                        setter={setProductList}
                                         cartHandler={cartHandler}
                                         key={product.key}
                 />

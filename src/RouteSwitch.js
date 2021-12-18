@@ -13,7 +13,7 @@ const RouteSwitch = () => {
 
    return (
        <BrowserRouter>
-           <Header />
+           <Header cartCounter={cartItems}/>
            <Routes>
                <Route path="/" element={<App />} />
                <Route path="/welcome" element={<Welcome />} />

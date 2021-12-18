@@ -45,8 +45,32 @@
     font-size: 2em;
     display: flex;
     flex-direction: row;
+    align-items: center;
     justify-content: space-around;
     font-family: 'Overpass', sans-serif;
+}
+
+.counterContainer {
+    height: 100%;
+    width: auto;
+    position: relative;
+    overflow: visible;
+}
+
+.count {
+    height: 20px;
+    width: 20px;
+    padding-top: 1px;
+    margin-left: 50px;
+    line-height: 20px;
+    font-size: 0.5em;
+    font-weight: normal;
+    border-radius: 50%;
+    background-color: var(--mulberry-crayola);
+    color: var(--lemon-meringue);
+    text-align: center;
+    position: absolute;
+    overflow: auto;
 }
 
 .navLinks a {
@@ -54,7 +78,7 @@
     text-decoration: none;
 }
 
-button {
+.navButton {
     background: var(--plump-purple);
     border: 1px solid #5344A9;
     border-radius: 6px;

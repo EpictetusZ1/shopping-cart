@@ -5,12 +5,20 @@ const Cart = ({ items }) => {
 
     const getTotal = (items) => {
         let sum = 0
+        let tax = 1.13
+
         items.forEach((item) => {
             sum = sum + parseFloat(item.data.price)
         })
-        let tax = 1.13
-        return ( sum * tax).toFixed(2)
+
+        return  [
+            ( sum * tax).toFixed(2),
+            (sum * tax).toFixed(2) - sum
+        ]
     }
+
+    const [total, tax] = getTotal(items)
+
 
     return (
         <div className={styles.cartContainer}>
@@ -29,13 +37,16 @@ const Cart = ({ items }) => {
                                 />
                             </td>
                             <td className={styles.itemTitle}>{item.data.name}</td>
+                            <td className={styles.quantity}>Quantity: {item.count}</td>
                             <td className={styles.price}>${item.data.price}</td>
                         </tr>
                     )
                 })}
                 </tbody>
             </table>
-            <h5 className={styles.total}>Your Total: &nbsp; ${getTotal(items)}</h5>
+            <hr/>
+            <div className={styles.taxAmt}>Taxes: ${tax}</div>
+            <h5 className={styles.total}>Your Total: ${total}</h5>
             <button className={styles.checkout}>Checkout Now</button>
         </div>
     );
