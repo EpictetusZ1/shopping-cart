@@ -6,6 +6,7 @@
     justify-content: flex-start;
     align-items: center;
     font-family: 'Overpass', sans-serif;
+    background-color: var(--lemon-meringue);
 }
 
 .cartTitle {
@@ -34,7 +35,7 @@ td, tr {
 table {
     border-collapse: collapse;
     border-radius: 2em;
-    border-style: hidden; /* hide standard table (collapsed) border */
+    border-style: hidden;
     box-shadow: 0 0 0 2px #000;
 }
 
