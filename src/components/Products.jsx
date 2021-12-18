@@ -28,11 +28,14 @@ const Products = ({ cartHandler, products, api }) => {
 
     // Fetch Image manifest and target image URL (~small)
     const fetchMeta = async (image) => {
+        let result = image.meta.replace("http", "https");
+
         const response = await fetch(
-            `${image.meta}`,
+            `${result}`,
             {mode: "cors"}
         )
         const data = await response.json()
+
         return {
             name: data["AVAIL:Title"],
             pDesc: data["AVAIL:Description"],
