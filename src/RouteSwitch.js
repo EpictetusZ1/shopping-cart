@@ -14,12 +14,12 @@ const RouteSwitch = () => {
        <BrowserRouter>
            <Header cartCounter={cartItems}/>
            <Routes>
-               <Route path="/" element={<App />} />
-               <Route path="/shop" element={<Products cartHandler={setCartItems}
+               <Route path="/shopping-cart/" element={<App />} />
+               <Route path="/shopping-cart/shop" element={<Products cartHandler={setCartItems}
                                                       products={[productList, setProductList]}
                                                       api={[apiCalled, setApiCalled]}
                />} />
-               <Route path="/shop/cart" element={<Cart items={cartItems} />} />
+               <Route path="/shopping-cart/shop/cart" element={<Cart items={cartItems} />} />
            </Routes>
        </BrowserRouter>
    )

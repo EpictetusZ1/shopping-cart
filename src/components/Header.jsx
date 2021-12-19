@@ -19,15 +19,15 @@ const Header = ({cartCounter}) => {
             </div>
 
             <ul className={styles.navLinks}>
-                <Link to={"/"}>
+                <Link to={"/shopping-cart/"}>
                     <button className={styles.navButton}>Home</button>
                 </Link>
-                <Link to={"/shop"}>
+                <Link to={"/shopping-cart/shop"}>
                     <button className={styles.navButton}>Shop</button>
                 </Link>
 
                 <div className={styles.counterContainer}>
-                    <Link to={"/shop/cart"}>
+                    <Link to={"/shopping-cart/shop/cart"}>
                         <div className={styles.count}>
                             {displayCount()}
                         </div>
